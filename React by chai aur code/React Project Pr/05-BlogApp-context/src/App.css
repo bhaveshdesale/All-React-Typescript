@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+}
+
+.main-container{
+  border: thin solid white;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+header{
+  padding: 1rem;
+  border: thin solid white;
+}
+footer{
+  border: thin solid white;
+  padding: 1rem;
+
+}
+
+.main{
+  padding: 1rem;
+  border: thin solid white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}

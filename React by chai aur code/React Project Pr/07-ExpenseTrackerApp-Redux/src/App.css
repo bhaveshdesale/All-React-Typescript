@@ -1,0 +1,65 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.main-container{
+  border: thin solid white;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.main-div{
+  border: thin solid white;
+  padding: 1rem;
+
+}
+
+.add-button{
+   padding: 0.5rem;
+  background-color: whitesmoke;
+   color: black;
+   border-radius: 8px;
+
+}
+
+.add-button{
+     background-color: floralwhite;
+     transition: all;
+
+}
+
+
+/* expense form */
+
+
+.expense-submit-form{
+  padding: 3rem;
+  display: grid;
+  gap: 1rem;
+
+
+}
+
+.expense-submit-form input{
+  padding: 0.25rem;
+}
+
+.expense-submit-form button{
+    padding: 0.25rem;
+
+}
+
+
+/* expense-div */
+.expense-div{
+  border: thin solid white;
+  padding: 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}

@@ -1,0 +1,91 @@
+# AsyncThunk vs RTK Query
+
+## AsyncThunk
+
+With **createAsyncThunk**, we manually write multiple layers for every API call:
+
+* Service Layer
+* Async Thunk
+* Redux Slice
+* extraReducers (pending, fulfilled, rejected)
+
+Example flow:
+
+```
+Component
+    ↓
+dispatch(fetchUsers())
+    ↓
+createAsyncThunk
+    ↓
+Service Layer
+    ↓
+API
+    ↓
+extraReducers
+    ↓
+Redux Store
+    ↓
+UI
+```
+
+This gives you complete control but requires writing more boilerplate code.
+
+---
+
+## RTK Query
+
+With **RTK Query**, most of this boilerplate is generated automatically.
+
+Instead of creating:
+
+* Service Layer
+* Async Thunk
+* Slice
+* extraReducers
+* Loading State
+* Error State
+
+You simply write:
+
+```tsx
+const { data, isLoading, error } = useGetUsersQuery();
+```
+
+RTK Query automatically handles:
+
+* API Requests
+* Loading State
+* Error State
+* Caching
+* Refetching
+* Cache Invalidation
+* Generated Hooks
+
+Example flow:
+
+```
+Component
+    ↓
+useGetUsersQuery()
+    ↓
+RTK Query API Slice
+    ↓
+API
+    ↓
+Redux Store
+    ↓
+UI
+```
+
+### Summary
+
+| AsyncThunk                       | RTK Query                                 |
+| -------------------------------- | ----------------------------------------- |
+| Manual API handling              | Automatic API handling                    |
+| Manual loading & error state     | Automatic loading & error state           |
+| Requires service + thunk + slice | Only API Slice required                   |
+| More boilerplate                 | Much less boilerplate                     |
+| Better for custom async logic    | Best for CRUD and API-driven applications |
+
+> **Interview Tip:** If your application already uses Redux and most of your asynchronous work involves CRUD operations, RTK Query is generally the preferred choice because it significantly reduces boilerplate while providing built-in caching, automatic refetching, and generated hooks.

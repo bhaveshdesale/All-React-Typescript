@@ -1,0 +1,53 @@
+User Types
+
+        ↓
+
+<Input />
+
+        ↓
+
+register()
+
+        ↓
+
+React Hook Form
+
+        ↓
+
+handleSubmit()
+
+        ↓
+
+zodResolver()
+
+        ↓
+
+signupSchema
+
+        ↓
+
+Valid ?
+
+     /      \
+
+   Yes       No
+
+   ↓          ↓
+
+onSubmit()   errors
+
+   ↓          ↓
+
+RTK Query     Input Component
+
+   ↓
+
+Backend
+
+   ↓
+
+Toast
+
+   ↓
+
+Navigate

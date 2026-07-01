@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+
+.main-container{
+  border: thin solid white;
+  min-height: 100vh;
+   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+
+}
+
+.header{
+  border: thin solid white;
+}
+.main{
+  border: thin solid white;
+}
+.footer{
+  border: thin solid white;
+}

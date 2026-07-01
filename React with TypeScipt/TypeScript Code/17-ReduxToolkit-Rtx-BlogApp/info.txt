@@ -1,0 +1,342 @@
+Project: Blog CRUD Dashboard
+What We'll Build
+
+A dashboard where users can:
+
+- View all blogs
+- Create a new blog
+- Update a blog
+- Delete a blog
+- Automatically refresh the UI after every mutation
+- Use RTK Query caching
+- Use cache invalidation
+- Follow production folder structure
+- Use reusable components
+= Use TypeScript everywhere
+
+Folder Structure (Industry Standard)
+src
+│
+├── app
+│   └── store.ts
+│
+├── services
+│   └── blogApi.ts
+│
+├── types
+│   └── blog.ts
+│
+├── components
+│   ├── BlogCard.tsx
+│   ├── BlogList.tsx
+│   ├── BlogForm.tsx
+│   └── DeleteButton.tsx
+│
+├── pages
+│   └── BlogDashboard.tsx
+│
+├── App.tsx
+└── main.tsx
+Overall Architecture
+User
+
+↓
+
+BlogDashboard
+
+↓
+
+BlogForm
+
+↓
+
+Create Mutation
+
+↓
+
+RTK Query
+
+↓
+
+API
+
+↓
+
+Cache Invalidated
+
+↓
+
+Get Blogs Query
+
+↓
+
+BlogList
+
+↓
+
+BlogCard
+What RTK Query Will Contain
+
+Our blogApi.ts will have five endpoints.
+
+GET
+
+↓
+
+getBlogs
+GET
+
+↓
+
+getBlogById
+POST
+
+↓
+
+createBlog
+PUT
+
+↓
+
+updateBlog
+DELETE
+
+↓
+
+deleteBlog
+Generated Hooks
+
+RTK Query automatically creates
+
+useGetBlogsQuery()
+
+useGetBlogByIdQuery()
+
+useCreateBlogMutation()
+
+useUpdateBlogMutation()
+
+useDeleteBlogMutation()
+
+Notice
+
+No custom hooks.
+
+No service files.
+
+No thunk.
+
+No slice.
+
+Everything comes from one API Slice.
+
+Component Flow
+BlogDashboard
+
+↓
+
+useGetBlogsQuery()
+
+↓
+
+BlogList
+
+↓
+
+BlogCard
+
+↓
+
+Update Button
+
+↓
+
+Delete Button
+
+↓
+
+RTK Query Mutation
+
+↓
+
+Cache Invalidated
+
+↓
+
+UI Updates Automatically
+Features We'll Implement
+1. Read Blogs
+
+Uses
+
+useGetBlogsQuery()
+2. Create Blog
+
+Uses
+
+useCreateBlogMutation()
+
+Flow
+
+Fill Form
+
+↓
+
+Click Create
+
+↓
+
+POST
+
+↓
+
+invalidatesTags
+
+↓
+
+GET
+
+↓
+
+Updated UI
+3. Update Blog
+
+Uses
+
+useUpdateBlogMutation()
+
+Flow
+
+Edit Title
+
+↓
+
+PUT
+
+↓
+
+invalidatesTags
+
+↓
+
+Updated UI
+4. Delete Blog
+
+Uses
+
+useDeleteBlogMutation()
+
+Flow
+
+Delete
+
+↓
+
+DELETE
+
+↓
+
+invalidatesTags
+
+↓
+
+Updated UI
+Cache Strategy
+
+Queries
+
+providesTags
+
+Mutations
+
+invalidatesTags
+
+Flow
+
+GET Blogs
+
+↓
+
+Cache
+
+↓
+
+Create Blog
+
+↓
+
+Invalidate Blog Cache
+
+↓
+
+Automatic GET Blogs
+
+↓
+
+Updated UI
+Concepts We'll Learn
+Query
+builder.query()
+Mutation
+builder.mutation()
+Tag Types
+tagTypes
+providesTags
+providesTags
+invalidatesTags
+invalidatesTags
+Generated Hooks
+useGetBlogsQuery()
+
+useCreateBlogMutation()
+
+useDeleteBlogMutation()
+Loading States
+isLoading
+Error States
+error
+Cache
+
+Automatic
+
+Refetch
+
+Automatic
+
+Middleware
+
+Automatic
+
+What Makes This Production-Level?
+
+Instead of
+
+await createBlog();
+
+dispatch(fetchBlogs());
+
+We'll simply write
+
+await createBlog(newBlog);
+
+RTK Query will:
+
+POST
+
+↓
+
+Invalidate Cache
+
+↓
+
+GET Blogs
+
+↓
+
+Update Redux Store
+
+↓
+
+Re-render Components
+
+No manual work.

@@ -1,0 +1,162 @@
+1) Blog Fetching flow- 
+
+Application Starts
+
+↓
+
+BlogDashboard
+
+↓
+
+useGetBlogsQuery()
+
+↓
+
+Redux Middleware
+
+↓
+
+Cache Available?
+
+↓
+
+NO
+
+↓
+
+GET /posts
+
+↓
+
+Response
+
+↓
+
+Redux Store
+
+↓
+
+Component Re-render
+
+↓
+
+BlogList
+
+↓
+
+BlogCard
+
+
+
+2) Blog Post Flow-
+
+
+Button Click
+
+↓
+
+createBlog()
+
+↓
+
+POST
+
+↓
+
+invalidatesTags
+
+↓
+
+Cache Removed
+
+↓
+
+GET /posts
+
+↓
+
+UI Updated
+
+
+
+
+
+3) Update Flow- 
+
+
+Click Edit
+
+↓
+
+editing=true
+
+↓
+
+Edit Form Opens
+
+↓
+
+User Changes Title
+
+↓
+
+Save
+
+↓
+
+PUT
+
+↓
+
+invalidatesTags
+
+↓
+
+GET Blogs
+
+↓
+
+Updated UI
+
+
+
+
+4) Delete Flow-
+
+User
+
+↓
+
+Delete Click
+
+↓
+
+Confirmation
+
+↓
+
+DELETE /posts/5
+
+↓
+
+Mutation Success
+
+↓
+
+invalidatesTags
+
+↓
+
+Blog Cache Removed
+
+↓
+
+GET /posts
+
+↓
+
+Redux Updated
+
+↓
+
+BlogDashboard Re-renders

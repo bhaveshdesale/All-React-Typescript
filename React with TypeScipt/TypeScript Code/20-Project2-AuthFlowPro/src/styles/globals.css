@@ -1,0 +1,41 @@
+@import "./variables.css";
+@import "./reset.css";
+
+body {
+  font-family: var(--font-family);
+
+  background: var(--color-background);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-md);
+
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  border: none;
+}
+
+input,
+textarea {
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+
+  outline-offset: 2px;
+}

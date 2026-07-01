@@ -1,0 +1,26 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;  
+}
+
+.main-container{
+  border: thin solid white;
+  min-height: 100vh;
+ display: grid;
+ grid-template-rows: auto 1fr auto;
+ gap: 1rem;
+}
+
+header{
+  border: thin solid white;
+  padding: 1rem;
+  font-size: 2em;
+}
+
+.main-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}

@@ -1,0 +1,98 @@
+Interview Questions From Today's Session
+1. Is Zod a React library?
+
+❌ No.
+
+It's a TypeScript-first runtime validation library.
+
+2. Does Zod replace TypeScript?
+
+❌ No.
+
+TypeScript checks types at compile time.
+
+Zod checks values at runtime.
+
+3. Why use Zod with React Hook Form?
+
+Because React Hook Form manages the form, while Zod centralizes and validates the form's data in reusable schemas.
+
+
+
+
+Interview Questions - 
+Difference between .min() and .max()
+.min() → minimum length/value
+.max() → maximum length/value
+
+Difference between .email() and .regex()
+.email() → built-in email validation
+.regex() → custom pattern validation
+
+Difference between .optional() and .nullable()
+.optional() → field may be omitted.
+.nullable() → field exists but can be null.
+
+
+
+
+const signupSchema = z.object({
+
+  fullName: z.string(),
+
+  email: z.string(),
+
+  password: z.string(),
+
+  age: z.number(),
+
+  acceptedTerms: z.boolean(),
+
+  skills: z.array(z.string()),
+
+});
+
+
+import { z } from "zod";
+
+export const signupSchema = z.object({
+
+  fullName: z
+    .string()
+    .min(3, "Minimum 3 characters")
+    .max(50, "Maximum 50 characters"),
+
+  email: z
+    .string()
+    .email("Invalid Email"),
+
+  password: z
+    .string()
+    .min(8, "Minimum 8 characters"),
+
+  age: z
+    .number()
+    .min(18, "Must be 18+"),
+
+  phone: z
+    .string()
+    .regex(
+      /^[0-9]{10}$/,
+      "Phone must be 10 digits"
+    ),
+
+  website: z
+    .string()
+    .url("Invalid URL")
+    .optional(),
+
+});
+
+
+
+API	                    Use
+parse()	         Validate and throw error
+safeParse()      Validate safely (most common outside RHF)
+refine()	       Custom validation for one field
+superRefine()	   Validate multiple related fields
+z.infer()	       Generate TypeScript types from schemas

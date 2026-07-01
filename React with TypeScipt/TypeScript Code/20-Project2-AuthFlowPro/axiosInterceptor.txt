@@ -1,0 +1,103 @@
+Axios says
+
+Every request
+
+↓
+
+Comes to me first
+
+↓
+
+I'll attach token
+
+↓
+
+Then send request
+
+This middle step is called
+
+Interceptor
+
+
+Visual
+
+Without Interceptor
+
+Component
+
+↓
+
+Axios
+
+↓
+
+Backend
+
+With Interceptor
+
+Component
+
+↓
+
+Axios
+
+↓
+
+Interceptor ⭐⭐⭐⭐⭐
+
+↓
+
+Backend
+
+Every request passes here.
+
+
+
+There are Two Types
+Request Interceptor
+
+Runs
+
+Before API
+
+Component
+
+↓
+
+Interceptor
+
+↓
+
+Backend
+
+Used for
+
+✅ JWT
+
+✅ Headers
+
+✅ Logging
+
+Response Interceptor
+
+Runs
+
+After API
+
+Backend
+
+↓
+
+Interceptor
+
+↓
+
+Component
+
+Used for
+
+✅ Refresh Token
+
+✅ Global Errors
+
+✅ Logout

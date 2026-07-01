@@ -1,0 +1,56 @@
+Store Responsibilities
+
+Our store has 4 jobs.
+
+Job 1
+
+Store Redux State
+
+Expense
+
+Todo
+
+Theme
+
+User
+
+Already learned.
+
+Job 2 ⭐
+
+Store RTK Query Cache
+
+GET Users
+
+↓
+
+Cached
+
+GET Posts
+
+↓
+
+Cached
+
+GET Products
+
+↓
+
+Cached
+Job 3 ⭐
+
+Run Middleware
+
+This is new.
+
+We'll understand this today.
+
+Job 4 ⭐
+
+Notify React
+
+Whenever cache changes
+
+↓
+
+React Re-renders.

@@ -1,0 +1,19 @@
+Problem Statement
+
+Build a Profile Card application using React + TypeScript. The application should display a list of user profiles containing id, name, age, email, role, and an optional address. Use TypeScript to define proper types for the user data and component props. Create a reusable ProfileCard component that accepts children and wraps the profile content. Display all profiles by mapping through the data array and show a default address when none is provided. Restrict the role field to only "admin" or "user" using Literal Types.
+
+
+Concepts Learned
+React + TypeScript setup
+TSX files
+Typing Props
+Typing Children (React.ReactNode)
+Interfaces
+Literal Types
+Optional Properties (?)
+Arrays of Objects
+Component Composition
+Mapping Data in React
+React Keys
+Reusable Components
+Type Safety

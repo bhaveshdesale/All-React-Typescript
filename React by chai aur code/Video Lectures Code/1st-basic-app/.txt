@@ -1,0 +1,10 @@
+react  - react-dom
+npm-node-package-manager
+cerate-react-app=is an utility (software used to create react app)
+we dont use create-react-app becuase its very heavy library and it will take so much time for installing 
+instead of that we will used the vite for that its a bundler
+command:- npm create vite@latest
+
+
+while making component make function by uppercase letter if we not capatilize it then it will failed
+file ka naam jsx rakhe 

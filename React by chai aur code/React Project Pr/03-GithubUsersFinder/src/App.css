@@ -1,0 +1,72 @@
+*{
+  box-sizing: border-box;
+}
+
+.main-container{
+  min-height: 100vh;
+  border: thin solid white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+.inputField{
+  display: flex;
+  align-items: center;
+  border: thin solid white;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+
+
+}
+
+.inputField input{
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.inputField button{
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+
+}
+
+
+.github-card{
+  border: thin solid white;
+  border-radius: 16px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+   padding: 1rem;
+   margin: 4rem;
+}
+
+.img-div img{
+  border: thin solid white;
+  width: 164px;
+  border-radius: 32px;
+
+}
+
+.user-info-div{
+  border: thin solid white;
+  border-radius: 16px;
+
+}
+
+
+.header{
+border: thin solid white;
+}
+
+.footer{
+  border: thin solid white;
+}
+
+
+

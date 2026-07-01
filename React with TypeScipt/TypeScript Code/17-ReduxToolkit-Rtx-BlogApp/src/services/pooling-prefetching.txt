@@ -1,0 +1,108 @@
+Definition (Interview)
+
+Polling is a technique where RTK Query automatically refetches data at a specified interval.
+
+Without Polling
+Page Load
+
+↓
+
+GET
+
+↓
+
+Done
+With Polling
+Page Load
+
+↓
+
+GET
+
+↓
+
+5 Seconds
+
+↓
+
+GET
+
+↓
+
+5 Seconds
+
+↓
+
+GET
+
+↓
+
+5 Seconds
+
+↓
+
+GET
+
+Code
+
+const { data } =
+useGetBlogsQuery(undefined, {
+
+pollingInterval:5000
+
+});
+
+
+
+Definition (Interview)
+
+Prefetching loads data before the user actually needs it, reducing waiting time.
+
+
+Code
+
+Get prefetch hook
+
+import { usePrefetch }
+
+from "../services/blogApi";
+
+Actually RTK Query provides it through the API object:
+
+const prefetchBlog =
+blogApi.usePrefetch("getBlogById");
+
+Suppose
+
+const prefetchBlog =
+blogApi.usePrefetch(
+"getBlogById"
+);
+
+Hover
+
+<div
+
+onMouseEnter={()=>
+
+prefetchBlog(blog.id)
+
+}
+
+>
+
+{blog.title}
+
+</div>
+
+That's it.
+
+
+
+Polling vs Prefetch
+
+| Polling             | Prefetch                 |
+| ------------------- | ------------------------ |
+| Time based          | User action based        |
+| Re-fetch repeatedly | Fetch once before needed |
+| Live data           | Better UX                |

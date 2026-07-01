@@ -1,0 +1,13 @@
+Each folder has one responsibility.
+| Folder       | Responsibility      |
+| ------------ | ------------------- |
+| `pages`      | Complete screens    |
+| `components` | Reusable UI         |
+| `schemas`    | Zod validation      |
+| `services`   | RTK Query APIs      |
+| `slices`     | Redux state         |
+| `api`        | Axios configuration |
+| `layouts`    | Shared page layouts |
+| `types`      | TypeScript types    |
+| `hooks`      | Custom hooks        |
+| `utils`      | Helper functions    |

@@ -1,0 +1,312 @@
+Project Name
+AuthFlow Pro
+
+A production-ready authentication frontend using:
+
+✅ React
+✅ TypeScript
+✅ React Router
+✅ Axios
+✅ Redux Toolkit
+✅ RTK Query
+✅ React Hook Form
+✅ Zod
+✅ Protected Routes
+✅ Reusable Components
+✅ Industry Folder Structure
+
+
+🎯 What We'll Build
+Authentication Flow
+Landing Page
+
+      │
+
+      ▼
+
+Login
+
+      │
+
+      ▼
+
+Signup
+
+      │
+
+      ▼
+
+Forgot Password
+
+      │
+
+      ▼
+
+Reset Password
+
+      │
+
+      ▼
+
+Dashboard
+
+      │
+
+      ▼
+
+Profile
+
+      │
+
+      ▼
+
+Edit Profile
+
+
+Features
+Authentication
+Login
+Signup
+Logout
+Remember Me
+Protected Routes
+Token Storage
+Auto Login
+Auto Logout
+Refresh Token Architecture (Frontend Ready)
+
+
+Forms
+React Hook Form
+Zod
+Reusable Input
+Password Input
+Confirm Password
+Show Password
+Password Strength
+Live Validation
+Async Validation
+
+
+API
+Axios
+Axios Interceptors
+RTK Query
+Authentication API
+User API
+Global Error Handling
+
+
+UI
+Toast Notifications
+Skeleton Loaders
+Loading Buttons
+Error Components
+Empty Components
+
+
+Performance
+Lazy Loading
+React.memo
+useMemo
+useCallback
+
+
+📁 Industry Folder Structure
+src/
+
+│
+├── api/
+│      axios.ts
+│
+├── app/
+│      store.ts
+│
+├── assets/
+│
+├── components/
+│
+│      common/
+│          Loader.tsx
+│          Button.tsx
+│          ErrorMessage.tsx
+│
+│      forms/
+│          Input.tsx
+│          PasswordInput.tsx
+│          Checkbox.tsx
+│          SubmitButton.tsx
+│
+│      auth/
+│          LoginForm.tsx
+│          SignupForm.tsx
+│
+├── hooks/
+│
+│      reduxHooks.ts
+│
+├── layouts/
+│
+│      AuthLayout.tsx
+│      DashboardLayout.tsx
+│
+├── pages/
+│
+│      Login/
+│      Signup/
+│      ForgotPassword/
+│      ResetPassword/
+│      Dashboard/
+│      Profile/
+│
+├── routes/
+│
+│      AppRoutes.tsx
+│      ProtectedRoute.tsx
+│
+├── schemas/
+│
+│      authSchema.ts
+│
+├── services/
+│
+│      axiosBaseQuery.ts
+│      baseApi.ts
+│      authApi.ts
+│
+├── slices/
+│
+│      authSlice.ts
+│
+├── types/
+│
+│      auth.ts
+│      user.ts
+│
+├── utils/
+│
+│      constants.ts
+│
+└── main.tsx
+
+
+🏗 Development Flow
+
+We'll build it in this exact order.
+
+Phase 1 — Foundation
+Project Setup- 
+npm install react-router-dom \
+@reduxjs/toolkit \
+react-redux \
+axios \
+react-hook-form \
+zod \
+@hookform/resolvers \
+react-hot-toast \
+react-loading-skeleton \
+react-icons
+
+↓
+
+Folder Structure
+
+↓
+
+Routing
+
+↓
+
+Layouts
+
+↓
+
+Redux Store
+
+
+Phase 2 — Networking
+Axios
+
+↓
+
+Interceptors
+
+↓
+
+Base API
+
+↓
+
+RTK Query
+
+↓
+
+Store
+
+
+Phase 3 — Authentication
+Schemas
+
+↓
+
+Types
+
+↓
+
+Login
+
+↓
+
+Signup
+
+↓
+
+Forgot Password
+
+↓
+
+Reset Password
+
+
+Phase 4 — Protected Routes
+JWT
+
+↓
+
+Redux
+
+↓
+
+Protected Route
+
+↓
+
+Dashboard
+
+
+Phase 5 — Profile
+Fetch User
+
+↓
+
+Profile
+
+↓
+
+Edit Profile
+
+
+Phase 6 — Production Polish
+Toast
+
+↓
+
+Skeleton
+
+↓
+
+Loading Button
+
+↓
+
+Deployment

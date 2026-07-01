@@ -1,0 +1,43 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.layout {
+  min-height: 100vh;
+  border: thin solid white;
+  background-color:seashell;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.main-content {
+  border: thin solid white;
+}
+
+.header nav {
+  display: flex;
+  gap: 2rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+.navlink{
+  text-decoration: none;
+   color:white;
+   font-size: 1.5em;
+}
+
+
+.footer{
+  color: white;
+  text-align: center;
+}

@@ -1,0 +1,67 @@
+*{
+  box-sizing: border-box;
+}
+
+.main-body{
+  border: thin solid white;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto;
+
+}
+
+.header{
+  border: thin solid white;
+}
+
+
+.footer{
+  border: thin solid white;
+}
+.main{
+  border: thin solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.input-box{
+  border: thin solid white;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.input-box input{
+  padding: 0.25rem;
+    border-radius: 0.5rem;
+
+}
+
+.input-box button{
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.weather-Card{
+  border: thin solid white;
+  display: flex;
+ 
+flex-direction: column;
+margin: 2rem 1rem;
+padding: 1rem;
+gap: 1rem;
+
+}
+
+.weather-data{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  
+}

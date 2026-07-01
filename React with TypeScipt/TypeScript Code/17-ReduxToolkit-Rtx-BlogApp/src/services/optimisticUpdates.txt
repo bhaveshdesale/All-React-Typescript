@@ -1,0 +1,114 @@
+Optimistic Update
+Optimistic Update is a technique where the UI is updated immediately before the server confirms the operation. If the request fails, the UI is rolled back to its previous state.
+
+
+Flow
+
+Instagram actually does
+
+Click Like
+
+↓
+
+Heart Turns Red Immediately ❤️
+
+↓
+
+API Request Runs
+
+↓
+
+Server Says Success
+
+↓
+
+Nothing Happens
+
+Feels instant.
+
+Question.
+
+What if server fails?
+
+Instagram does
+
+Heart Turns Red ❤️
+
+↓
+
+API Failed
+
+↓
+
+Heart Turns White 🤍 Again
+
+
+
+
+
+What is onQueryStarted?
+
+A lifecycle callback that executes immediately when a query or mutation starts, before the server response is received.
+
+What is updateQueryData()?
+
+A utility that allows direct modification of cached query data.
+
+What is queryFulfilled?
+
+A promise that resolves when the API request succeeds or rejects if it fails.
+
+Why is patchResult.undo() needed?
+
+It rolls back the optimistic cache update if the server request fails, keeping the UI consistent with the backend.
+
+
+
+
+
+Flow- 
+
+
+Click Update
+
+↓
+
+onQueryStarted
+
+↓
+
+updateQueryData()
+
+↓
+
+Cache Changes
+
+↓
+
+UI Changes Instantly
+
+↓
+
+API Request
+
+↓
+
+Success
+
+↓
+
+Keep Cache
+
+OR
+
+↓
+
+Failure
+
+↓
+
+undo()
+
+↓
+
+Restore Old Cache

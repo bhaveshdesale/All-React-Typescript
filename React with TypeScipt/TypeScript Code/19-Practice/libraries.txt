@@ -1,0 +1,777 @@
+npm install react-router-dom
+
+# Redux Toolkit + RTK Query
+npm install @reduxjs/toolkit react-redux
+
+# Axios
+npm install axios
+
+# Skeleton Loader
+npm install react-loading-skeleton
+
+# Toast Notifications
+npm install react-hot-toast
+
+# Icons
+npm install react-icons
+
+# Class Name Utility
+npm install clsx
+
+# (Optional) Better Date Formatting
+npm install date-fns
+
+# (Optional) UUID Generator
+npm install uuid
+
+# Type Definitions
+npm install -D @types/uuid
+
+
+
+DevStream - Complete Development Roadmap (Industry Standard)
+📍 Phase 0 - Project Initialization
+Goal
+
+Set up the project before writing any business logic.
+
+1. Create Vite + React + TypeScript Project
+2. Install Required Packages
+3. Clean Default Project
+4. Create Folder Structure
+5. Configure ESLint / Prettier (Optional)
+6. Create .env
+7. Add Assets Folder
+Install Packages
+npm install
+
+react-router-dom
+
+@reduxjs/toolkit
+
+react-redux
+
+axios
+
+react-loading-skeleton
+
+react-hot-toast
+📍 Phase 1 - Project Structure
+
+Now don't build features.
+
+First create the architecture.
+
+src/
+
+api/
+
+app/
+
+assets/
+
+components/
+
+hooks/
+
+layouts/
+
+pages/
+
+routes/
+
+services/
+
+types/
+
+utils/
+
+styles/
+
+Inside components
+
+components/
+
+common/
+
+developers/
+
+profile/
+
+reels/
+
+Inside pages
+
+pages/
+
+Home/
+
+About/
+
+Developers/
+
+Profile/
+
+Reels/
+
+NotFound/
+📍 Phase 2 - Routing
+
+Now make navigation work.
+
+Create Files
+App.tsx
+
+↓
+
+AppRoutes.tsx
+
+↓
+
+MainLayout.tsx
+
+↓
+
+Navbar.tsx
+
+↓
+
+Footer.tsx
+
+↓
+
+Empty Pages
+
+↓
+
+Configure Routes
+
+Flow
+
+Browser
+
+↓
+
+App
+
+↓
+
+Router
+
+↓
+
+MainLayout
+
+↓
+
+Page
+📍 Phase 3 - Redux Toolkit Setup
+
+Don't fetch APIs yet.
+
+First prepare Redux.
+
+Create
+
+app/
+
+store.ts
+
+↓
+
+Create
+
+hooks/
+
+reduxHooks.ts
+
+↓
+
+Provider
+
+main.tsx
+
+Flow
+
+Store
+
+↓
+
+Provider
+
+↓
+
+Whole App
+📍 Phase 4 - API Foundation
+
+Now build the networking layer.
+
+Never create feature APIs first.
+
+Create
+
+.env
+
+↓
+
+Create
+
+api/
+
+axios.ts
+
+↓
+
+Axios Instance
+
+↓
+
+Axios Interceptors
+
+↓
+
+Axios Timeout
+
+↓
+
+Authorization Header
+
+Then
+
+Create
+
+services/
+
+axiosBaseQuery.ts
+
+↓
+
+Connect Axios
+
+↓
+
+RTK Query
+
+Then
+
+services/
+
+baseApi.ts
+
+↓
+
+createApi()
+
+↓
+
+Tag Types
+
+↓
+
+Empty Endpoints
+
+Finally
+
+store.ts
+
+↓
+
+Add
+
+baseApi.reducer
+
+baseApi.middleware
+
+Flow
+
+Redux
+
+↓
+
+Base API
+
+↓
+
+Axios Base Query
+
+↓
+
+Axios
+
+↓
+
+Backend
+📍 Phase 5 - Developers Module
+
+Now build your first feature.
+
+Types
+types/
+
+developer.ts
+
+↓
+
+Developer Interface
+
+↓
+
+DeveloperResponse Interface
+
+API
+services/
+
+developerApi.ts
+
+↓
+
+Inject Endpoints
+
+↓
+
+Get Developers
+
+↓
+
+Get Developer
+
+↓
+
+Search Developer
+
+↓
+
+Generated Hooks
+
+Components
+DeveloperCard
+
+DeveloperSearch
+
+DeveloperSkeleton
+Common Components
+Loader
+
+ErrorState
+
+EmptyState
+Page
+Developers.tsx
+
+↓
+
+RTK Query
+
+↓
+
+Loading
+
+↓
+
+Error
+
+↓
+
+Success
+
+↓
+
+Render Cards
+
+Flow
+
+Developer Page
+
+↓
+
+Developer API
+
+↓
+
+Backend
+
+↓
+
+Developer Card
+📍 Phase 6 - Profile Module
+
+Create
+
+ProfileCard
+
+↓
+
+Create
+
+Profile.tsx
+
+↓
+
+Dynamic Route
+
+↓
+
+useParams()
+
+↓
+
+Single Developer Query
+
+↓
+
+Display Profile
+
+Flow
+
+Developer Card
+
+↓
+
+Click
+
+↓
+
+Profile Page
+
+↓
+
+Fetch Developer
+
+↓
+
+Render
+📍 Phase 7 - Reels Module
+
+Create
+
+types/
+
+reel.ts
+
+↓
+
+Create
+
+reelApi.ts
+
+↓
+
+Pagination
+
+↓
+
+ReelCard
+
+↓
+
+Reels Page
+
+↓
+
+Infinite Scroll
+
+↓
+
+Intersection Observer
+
+↓
+
+Custom Hook
+
+useInfiniteReels.ts
+
+↓
+
+Duplicate Prevention
+
+Flow
+
+Reels
+
+↓
+
+Observer
+
+↓
+
+Page++
+
+↓
+
+API
+
+↓
+
+Append
+
+↓
+
+Render
+📍 Phase 8 - Search Module
+
+Create
+
+useDebounce.ts
+
+↓
+
+Controlled Search
+
+↓
+
+Search API
+
+↓
+
+Skip Query
+
+↓
+
+Conditional Query
+
+↓
+
+Render Search Results
+
+Flow
+
+Input
+
+↓
+
+Debounce
+
+↓
+
+Search API
+
+↓
+
+Render
+📍 Phase 9 - Performance
+
+React Optimization
+
+React.memo
+
+↓
+
+useMemo
+
+↓
+
+useCallback
+
+Routing Optimization
+
+React.lazy
+
+↓
+
+Suspense
+
+↓
+
+Code Splitting
+
+Rendering Optimization
+
+Skeleton Loader
+📍 Phase 10 - Production Features
+
+Create
+
+ScrollToTop
+
+↓
+
+Toast Notifications
+
+↓
+
+Environment Variables
+
+↓
+
+Constants File
+
+↓
+
+Utilities
+
+↓
+
+Final Folder Cleanup
+
+📍 Phase 11 - Deployment
+Build
+
+↓
+
+GitHub
+
+↓
+
+Vercel
+
+↓
+
+Live Project
+🧠 Complete File Creation Order
+1. main.tsx
+
+2. App.tsx
+
+3. AppRoutes.tsx
+
+4. MainLayout.tsx
+
+5. Navbar.tsx
+
+6. Footer.tsx
+
+7. Empty Pages
+
+----------------------------
+
+8. store.ts
+
+9. reduxHooks.ts
+
+----------------------------
+
+10. .env
+
+11. axios.ts
+
+12. axiosBaseQuery.ts
+
+13. baseApi.ts
+
+14. Update Store
+
+----------------------------
+
+15. developer.ts
+
+16. developerApi.ts
+
+17. Loader
+
+18. ErrorState
+
+19. EmptyState
+
+20. DeveloperCard
+
+21. DeveloperSearch
+
+22. DeveloperSkeleton
+
+23. Developers.tsx
+
+----------------------------
+
+24. Update Developer Types
+
+25. ProfileCard
+
+26. Update developerApi
+
+27. Profile.tsx
+
+----------------------------
+
+28. reel.ts
+
+29. reelApi.ts
+
+30. ReelCard
+
+31. ReelSkeleton
+
+32. useInfiniteReels.ts
+
+33. Reels.tsx
+
+----------------------------
+
+34. useDebounce.ts
+
+35. Search Integration
+
+----------------------------
+
+36. React.memo
+
+37. useMemo
+
+38. useCallback
+
+39. Lazy Loading
+
+40. Suspense
+
+41. Skeleton Loader
+
+----------------------------
+
+42. ScrollToTop
+
+43. Toast
+
+44. Environment Variables
+
+45. Folder Cleanup
+
+46. Deployment
+🏆 Final Development Flow
+Project Initialization
+        │
+        ▼
+Folder Structure
+        │
+        ▼
+Routing
+        │
+        ▼
+Redux Store
+        │
+        ▼
+Axios
+        │
+        ▼
+Axios Interceptors
+        │
+        ▼
+Axios Base Query
+        │
+        ▼
+Base API
+        │
+        ▼
+Developers Module
+        │
+        ▼
+Profile Module
+        │
+        ▼
+Reels Module
+        │
+        ▼
+Infinite Scroll
+        │
+        ▼
+Search Module
+        │
+        ▼
+Performance Optimization
+        │
+        ▼
+Production Features
+        │
+        ▼
+Deployment
+⭐ This is the exact roadmap I recommend you follow
+
+If you rebuild the project using this sequence, you'll naturally learn how to think like a frontend architect, not just how to code components. Every phase builds on the previous one, and by the time you reach the end, you'll have recreated a production-ready application from first principles without getting lost.

@@ -1,0 +1,450 @@
+COMPLETE REDUX FLOW OF YOUR PROJECT
+
+This is where everything finally connects together.
+
+Just like we did for the Context Todo project.
+
+STEP 7 — APP STARTUP FLOW
+
+User opens application.
+
+main.jsx Executes
+
+React starts from:
+
+main.jsx
+
+First:
+
+import {store} from './app/store.js'
+
+Store imported.
+
+Then:
+
+<Provider store={store}>
+    <App />
+</Provider>
+
+Provider shares Redux Store.
+
+Current Flow:
+
+Store Created
+      ↓
+Provider Receives Store
+      ↓
+Provider Shares Store
+      ↓
+App Can Access Store
+STEP 8 — STORE CREATION FLOW
+
+Inside:
+
+store.js
+
+This runs:
+
+configureStore({
+   reducer: todoReducer
+})
+
+Question:
+
+Where does initial data come from?
+
+Answer:
+
+initialState
+
+inside:
+
+todoSlice.js
+
+Store becomes:
+
+{
+   todos:[
+      {
+         id:1,
+         text:"hello world"
+      }
+   ]
+}
+
+Store is now ready.
+
+STEP 9 — APP RENDERS
+
+React renders:
+
+<App />
+
+App renders:
+
+<AddTodo />
+<Todos />
+STEP 10 — TODOS COMPONENT READS STORE
+
+Inside:
+
+Todos.jsx
+
+this runs:
+
+const todos =
+   useSelector(state => state.todos)
+
+Redux gives:
+
+[
+   {
+      id:1,
+      text:"hello world"
+   }
+]
+
+Now:
+
+todos.map(...)
+
+runs.
+
+UI shows:
+
+hello world
+
+Current Flow:
+
+Store
+   ↓
+useSelector
+   ↓
+Todos Component
+   ↓
+UI
+STEP 11 — USER TYPES NEW TODO
+
+Inside:
+
+AddTodo.jsx
+
+User types:
+
+Learn Redux
+
+This runs:
+
+setInput("Learn Redux")
+
+Question:
+
+Does Redux update?
+
+NO.
+
+Why?
+
+Because typing is:
+
+Temporary UI State
+
+Only AddTodo needs it.
+
+Therefore:
+
+useState()
+
+is correct.
+
+Current State:
+
+input = "Learn Redux"
+STEP 12 — USER CLICKS ADD
+
+This runs:
+
+dispatch(addTodo(input))
+
+Let's trace EVERYTHING.
+
+STEP 13 — ACTION CREATION
+
+First:
+
+addTodo(input)
+
+runs.
+
+Suppose:
+
+input = "Learn Redux"
+
+Redux Toolkit creates:
+
+{
+   type:"todo/addTodo",
+   payload:"Learn Redux"
+}
+
+VERY IMPORTANT
+
+Action means:
+
+What happened?
+
+Payload means:
+
+What data?
+
+Current Flow:
+
+AddTodo Component
+      ↓
+Action Created
+STEP 14 — DISPATCH
+
+Now:
+
+dispatch(...)
+
+runs.
+
+Dispatch sends action to Redux Store.
+
+Think:
+
+Send Request
+
+Current Flow:
+
+Component
+     ↓
+Dispatch
+     ↓
+Store
+STEP 15 — REDUCER EXECUTES
+
+Redux checks:
+
+type:"todo/addTodo"
+
+Then finds matching reducer:
+
+addTodo:(state, action)=>{
+
+Reducer receives:
+
+action.payload
+
+which contains:
+
+Learn Redux
+STEP 16 — STATE UPDATE
+
+Reducer creates:
+
+{
+   id:nanoid(),
+   text:"Learn Redux"
+}
+
+Then:
+
+state.todos.push(todo)
+
+Redux Toolkit + Immer internally create:
+
+NEW IMMUTABLE STATE
+
+Store becomes:
+
+{
+   todos:[
+      {
+         id:1,
+         text:"hello world"
+      },
+
+      {
+         id:"abc123",
+         text:"Learn Redux"
+      }
+   ]
+}
+
+Current Flow:
+
+Reducer
+    ↓
+Store Updated
+STEP 17 — REDUX NOTIFIES SUBSCRIBERS
+
+Who subscribed?
+
+Answer:
+
+useSelector()
+
+Remember:
+
+const todos =
+   useSelector(...)
+
+useSelector listens for store updates.
+
+Store changed.
+
+↓
+
+Redux notifies useSelector.
+
+STEP 18 — COMPONENT RE-RENDER
+
+Todos component runs again.
+
+This runs again:
+
+const todos =
+   useSelector(state => state.todos)
+
+Now Redux returns:
+
+[
+   {id:1,text:"hello world"},
+   {id:2,text:"Learn Redux"}
+]
+
+Map runs again.
+
+UI updates.
+
+New todo appears.
+
+COMPLETE ADD FLOW
+User Clicks Add
+        ↓
+dispatch(addTodo(input))
+        ↓
+Action Created
+        ↓
+{
+ type:"todo/addTodo",
+ payload:"Learn Redux"
+}
+        ↓
+Dispatch
+        ↓
+Reducer
+        ↓
+Store Updated
+        ↓
+Redux Notifies Subscribers
+        ↓
+useSelector Runs Again
+        ↓
+Component Re-renders
+        ↓
+UI Updates
+
+THIS is the entire Redux lifecycle.
+
+DELETE FLOW
+
+User clicks delete.
+
+This runs:
+
+dispatch(removeTodo(todo.id))
+
+Redux creates:
+
+{
+   type:"todo/removeTodo",
+   payload:id
+}
+
+Reducer executes:
+
+state.todos =
+   state.todos.filter(...)
+
+Store updates.
+
+Redux notifies useSelector.
+
+Todos component re-renders.
+
+Todo disappears.
+
+THE BIGGEST REDUX MENTAL MODEL
+
+Everything in Redux follows:
+
+UI
+ ↓
+Dispatch
+ ↓
+Action
+ ↓
+Reducer
+ ↓
+Store
+ ↓
+useSelector
+ ↓
+UI
+
+It's a complete cycle.
+
+CONTEXT VS REDUX MENTAL MODEL
+Context
+UI
+ ↓
+Context Function
+ ↓
+setState
+ ↓
+UI
+Redux
+UI
+ ↓
+Dispatch
+ ↓
+Action
+ ↓
+Reducer
+ ↓
+Store
+ ↓
+useSelector
+ ↓
+UI
+
+Redux introduces:
+
+Action
+Reducer
+Store
+
+between UI and state.
+
+That's why Redux scales better for large applications.
+
+MOST IMPORTANT THING YOU SHOULD REMEMBER
+
+Redux has only one rule:
+
+Components NEVER change state directly.
+
+Instead:
+
+Component
+   ↓
+Dispatch Action
+   ↓
+Reducer Changes State
+
+That separation is the core philosophy of Redux.
+
+Now you understand the complete architecture of your Redux Todo App from app startup to add and delete operations.

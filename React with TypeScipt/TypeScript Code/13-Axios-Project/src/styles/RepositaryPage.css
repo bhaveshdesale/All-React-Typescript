@@ -1,0 +1,18 @@
+.Repositary-Page{
+  border: thin solid white;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.repositary-card{
+  border: thin solid white;
+  padding: 2rem;
+  display: grid;
+border-radius: 1rem;
+margin: 1rem;
+
+}

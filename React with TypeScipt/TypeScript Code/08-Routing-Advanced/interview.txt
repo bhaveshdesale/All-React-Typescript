@@ -1,0 +1,19 @@
+Dynamic Route
+↓
+URL Variables
+
+useParams
+↓
+Read URL Variables
+
+useNavigate
+↓
+Navigate Using Code
+
+Nested Routes
+↓
+Shared Layout
+
+Protected Routes
+↓
+Authentication Guard

@@ -1,0 +1,54 @@
+What is Lazy Query?
+
+A Lazy Query is a query that executes only when its trigger function is called instead of automatically when the component mounts.
+
+
+Difference Between Mutation and Lazy Query?
+
+This is a very common interview question.
+
+| Lazy Query               | Mutation                   |
+| ------------------------ | -------------------------- |
+| Uses GET                 | Uses POST/PUT/PATCH/DELETE |
+| Reads Data               | Changes Data               |
+| Returns Trigger Function | Returns Trigger Function   |
+| No automatic execution   | No automatic execution     |
+
+
+
+
+Visual Comparison
+Query
+Component Mount
+
+↓
+
+GET
+Lazy Query
+Component Mount
+
+↓
+
+Nothing
+
+↓
+
+trigger()
+
+↓
+
+GET
+Mutation
+Component Mount
+
+↓
+
+Nothing
+
+↓
+
+create()
+
+↓
+
+POST

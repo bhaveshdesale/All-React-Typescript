@@ -1,0 +1,63 @@
+
+
+.card-div{
+  min-height: 100vh;
+  gap: 1rem;
+  display: grid;
+  padding: 1rem;
+  align-items: center;
+  justify-items: center;
+  
+}
+
+.card-profile-div{
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  border: thin solid white;
+  border-radius: 2rem;
+  
+}
+
+.card-proifle{
+  border: thin solid wheat;
+  padding: 1rem;
+  transform: all;
+  border-radius: 2rem;
+}
+
+.card-info-div{
+  min-height: 100%;
+  display: grid;
+  border: thin solid white;
+  border-radius: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+
+.section-followers{
+  display: flex;
+  gap: 1rem;
+  
+}
+
+
+.section-following{
+  display: flex;
+  gap: 1rem;
+}
+
+
+
+button{
+  padding: 0.25rem;
+  background-color:darkgray;
+  color: black;
+}
+button:hover{
+  background-color: black;
+  color:white
+}

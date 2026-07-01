@@ -1,0 +1,44 @@
+Interview Definition
+What is Manual Cache Update?
+
+Manual Cache Update is the process of directly modifying RTK Query's cached data after a successful server response, avoiding an unnecessary refetch of the entire query.
+
+
+
+Manual Cache vs Optimistic Update
+
+| Optimistic               | Manual                  |
+| ------------------------ | ----------------------- |
+| Cache updated before API | Cache updated after API |
+| Instant UI               | Waits for success       |
+| Needs rollback           | No rollback             |
+| More complex             | Simpler                 |
+| Better UX                | Better consistency      |
+
+
+
+Which One Should I Use?
+
+This is a common interview question.
+
+Use Optimistic Updates when:
+
+Likes
+Stars
+Toggle switches
+Todo checkbox
+Fast interactions
+
+The user expects an instant response.
+
+Use Manual Cache Updates when:
+
+Banking apps
+Payments
+Orders
+Inventory
+Financial systems
+
+You want to update the UI only after the server confirms success.
+
+

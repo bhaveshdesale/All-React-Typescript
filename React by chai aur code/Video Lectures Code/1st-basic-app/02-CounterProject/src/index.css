@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  color: white;
+  border: thin solid white;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}

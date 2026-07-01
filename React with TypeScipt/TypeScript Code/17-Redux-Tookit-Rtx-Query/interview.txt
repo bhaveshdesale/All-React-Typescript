@@ -1,0 +1,21 @@
+Interview Definition- 
+
+RTK Query is a powerful data-fetching and caching solution built into Redux Toolkit that automatically manages API requests, caching, loading states, error states, and data synchronization.
+
+
+New Concepts- 
+
+You only need to learn:
+
+createApi
+
+fetchBaseQuery
+
+Query
+
+Mutation
+
+Tag Types
+
+
+

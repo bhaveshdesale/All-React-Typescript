@@ -1,0 +1,64 @@
+RTK Query Summary
+
+
+Automatic Query
+useGetBlogsQuery()
+
+usage- Dashboard
+
+
+
+
+Lazy Query
+useLazyGetBlogsQuery()
+
+uasage- Search
+
+
+
+Mutation
+useCreateBlogMutation()
+
+usage- POST
+
+Polling
+useGetBlogsQuery(undefined,{
+pollingInterval:5000
+})
+
+usage- Live Updates
+
+
+
+Prefetch
+const prefetch =
+blogApi.usePrefetch(
+"getBlogById"
+);
+
+usage- Better UX
+
+
+
+
+Optimistic Update
+onQueryStarted()
+
+usage- Instant UI
+
+
+
+
+Manual Cache Update
+updateQueryData()
+
+usage- Update cache manually
+
+
+
+Dynamic Tags
+providesTags
+
+invalidatesTags
+
+usage- Smart caching

@@ -1,0 +1,4 @@
+Interview Definition
+
+createApi is a function provided by RTK Query that creates an API slice responsible for fetching, caching, and synchronizing server data.
+

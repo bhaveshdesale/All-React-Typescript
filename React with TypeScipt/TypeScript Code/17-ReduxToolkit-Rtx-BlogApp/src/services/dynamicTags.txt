@@ -1,0 +1,103 @@
+Dynamic tags used for cashed only that data that had been changed instead of cashing intire data
+Let's Visualize the Entire Flow
+Suppose your cache is
+
+Cache
+
+↓
+
+Blog id=1
+
+Blog id=2
+
+Blog id=3
+
+LIST
+Create
+Create Blog
+
+↓
+
+Invalidate
+
+LIST
+
+↓
+
+GET /posts
+
+↓
+
+Entire List Updated
+Update Blog 2
+Update Blog
+
+↓
+
+id=2
+
+↓
+
+Invalidate
+
+Blog 2
+
+↓
+
+Refresh Blog 2
+Delete Blog 3
+Delete Blog
+
+↓
+
+id=3
+
+↓
+
+Invalidate
+
+Blog 3
+
+↓
+
+Remove Blog 3
+
+
+
+
+
+Entrire Flow now-
+
+Now
+
+Create
+
+↓
+
+Reload LIST
+
+Update
+
+↓
+
+Reload only Blog 2
+
+Delete
+
+↓
+
+Remove only Blog 3
+
+Much more efficient
+
+What is the purpose of Dynamic Tags?
+
+Dynamic Tags allow RTK Query to associate cached data with individual entities instead of invalidating an entire collection. This enables more efficient cache management and minimizes unnecessary network requests.
+
+What is the purpose of the LIST tag?
+
+The LIST tag represents the entire collection. It's typically invalidated after create operations because the collection itself changes.
+
+Why use type: "Blog" as const?
+
+RTK Query expects a literal string type for tags. as const ensures TypeScript treats "Blog" as a literal type instead of a general string.

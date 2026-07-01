@@ -1,0 +1,229 @@
+React Hook Form
+React Hook Form primarily uses uncontrolled components. The input values are stored in the DOM instead of React state, so typing into a field does not cause the entire component to re-render on every keystroke
+
+⭐ Complete RHF APIs
+
+useForm()         ⭐⭐⭐⭐⭐
+
+register()        ⭐⭐⭐⭐⭐
+
+handleSubmit()    ⭐⭐⭐⭐⭐
+
+errors            ⭐⭐⭐⭐⭐
+
+Validation        ⭐⭐⭐⭐⭐
+
+watch()           ⭐⭐⭐⭐⭐
+
+getValues()       ⭐⭐⭐⭐⭐
+
+reset()           ⭐⭐⭐⭐
+
+setValue()        ⭐⭐⭐⭐
+
+trigger()         ⭐⭐⭐⭐
+
+Controller()      ⭐⭐⭐⭐⭐
+
+useFieldArray()   ⭐⭐⭐⭐⭐
+
+
+
+React Hook Form
+User Types
+
+↓
+
+Browser Stores Value
+
+↓
+
+No React Render
+
+↓
+
+Submit
+
+↓
+
+React Gets Data
+
+
+1. Why is React Hook Form faster than useState forms?
+
+Because it primarily uses uncontrolled components, reducing unnecessary re-renders.
+
+2. What does register() do?
+
+It connects an input element to React Hook Form by attaching the required properties and event handlers.
+
+3. What is useForm()?
+
+It creates and manages the complete form state and provides helper methods like register, handleSubmit, watch, reset, and formState.
+
+4. What is formState?
+
+It contains metadata about the form such as validation errors, submission state, dirty fields, touched fields, and overall validity.
+
+
+
+
+
+
+
+1. Why do we use useForm()?
+
+It creates and manages the entire form state and provides utilities like register, handleSubmit, watch, reset, and formState.
+
+2. What does register() do?
+
+It connects an input field to React Hook Form by attaching the necessary properties like name, ref, onChange, and onBlur.
+
+3. Why do we use handleSubmit() instead of calling onSubmit() directly?
+
+Because handleSubmit() performs validation first. If the form is valid, it calls onSubmit(data); otherwise, it updates formState.errors.
+
+4. Why do we use errors.fullName?.message?
+
+Because errors.fullName may not exist if there is no validation error. Optional chaining prevents runtime errors.
+
+
+
+
+* Watch vs getValues
+
+
+Visual
+watch
+Typing
+
+↓
+
+watch
+
+↓
+
+Updates
+
+↓
+
+Render
+getValues
+Button Click
+
+↓
+
+Read Value
+
+↓
+
+Done
+
+
+
+Rule
+
+Need Live Updates?
+
+watch()
+
+Need Current Value Once?
+
+getValues()
+
+
+| API           | Reactive? | Re-render?    | Primary Use                       |
+| ------------- | --------- | ------------- | --------------------------------- |
+| `watch()`     | ✅ Yes     | ✅ Yes         | Live UI updates                   |
+| `getValues()` | ❌ No      | ❌ No          | Read current values once          |
+| `reset()`     | N/A       | Updates form  | Clear or replace the entire form  |
+| `setValue()`  | N/A       | Updates field | Programmatically update one field |
+| `trigger()`   | N/A       | Validation    | Manually run validation           |
+
+
+Production Cheat Sheet- 
+
+watch()
+const password = watch("password");
+
+Use for:
+Password strength
+Live preview
+Conditional UI
+
+
+getValues()
+getValues("password")
+
+Use for:
+Compare passwords
+Read values in validation
+Read current form state once
+
+
+reset()
+reset();
+
+Use for:
+Clear form after submit
+reset(userData);
+
+Use for:
+Edit forms
+Prefill data from API
+
+
+
+setValue()
+setValue("email", "demo@gmail.com");
+
+Use for:
+Auto-fill
+Demo login
+API responses
+OTP flows
+
+
+
+
+trigger()
+await trigger();
+
+Use for:
+Multi-step forms
+Validate before moving to the next step
+Validate specific fields on demand
+
+
+
+
+
+
+
+
+
+
+Problem
+
+Suppose you use
+
+MUI TextField
+React Select
+Date Picker
+Ant Design Select
+
+These components don't expose their refs the same way.
+
+<ReactSelect />
+
+register() ❌ won't work.
+
+
+
+Interview Question
+
+When should you use Controller?
+
+Answer:
+
+Use Controller when working with controlled third-party components that cannot be registered directly using register().
